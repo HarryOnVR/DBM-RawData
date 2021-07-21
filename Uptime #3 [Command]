@@ -20,7 +20,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "**Uptime**: ${tempVars(\"Uptime\")}",
+      "message": "**Uptime**: ${tempVars(\"Time\")}",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
