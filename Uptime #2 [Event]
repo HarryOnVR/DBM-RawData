@@ -1,0 +1,14 @@
+{
+  "name": "Bot Uptime Interval",
+  "temp": "1",
+  "event-type": "3",
+  "_id": "MVnPE",
+  "actions": [
+    {
+      "dataName": "Uptime",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Global Data"
+    }
+  ]
+}
