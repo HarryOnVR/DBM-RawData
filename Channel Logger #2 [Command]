@@ -1,0 +1,46 @@
+{
+  "name": "Log",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "qWiYx",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "Channel",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ID",
+      "name": "Store Channel Info"
+    },
+    {
+      "title": "This channel's message logs:",
+      "author": "",
+      "color": "BLUE",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "file": "./Logs/Channels/${tempVars(\"ID\")}-log.txt",
+      "message": "",
+      "name": "Send File"
+    }
+  ],
+  "comType": "0"
+}
