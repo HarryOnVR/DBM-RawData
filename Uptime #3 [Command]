@@ -1,0 +1,30 @@
+{
+  "name": "Uptime",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "hIPJn",
+  "actions": [
+    {
+      "dataName": "Uptime",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName": "Uptime",
+      "name": "Store Global Data"
+    },
+    {
+      "time": "${tempVars(\"Uptime\")}",
+      "storage": "1",
+      "varName": "Time",
+      "name": "Convert Seconds To D/H/M/S"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Uptime**: ${tempVars(\"Uptime\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}
