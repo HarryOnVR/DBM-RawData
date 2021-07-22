@@ -1,0 +1,419 @@
+{
+  "name": "Open",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "Xcgvc",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "TicketCount",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "TicketCount",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "TicketCount",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "TicketCount",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "TicketCount",
+      "name": "Store Server Data"
+    },
+    {
+      "channelName": "ticket-${tempVars(\"TicketCount\")}",
+      "topic": "",
+      "position": "",
+      "storage": "1",
+      "varName": "TicketChannel",
+      "categoryID": "867773137751900200",
+      "reason": "",
+      "name": "Create Text Channel"
+    },
+    {
+      "title": "New Ticket",
+      "author": "",
+      "color": "BLUE",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Thank you for creating a ticket! Our Staff Team will be with you shortely!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "🔒 - Download Ticket Logs | ⛔ - Close Ticket",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "TicketChannel",
+      "storage3": "1",
+      "varName3": "embedSent",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embedSent",
+      "emoji": "4",
+      "varName2": "🔒",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "embedSent",
+      "emoji": "4",
+      "varName2": "⛔",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "storage": "1",
+      "varName2": "Bot",
+      "name": "Get Bot as Member"
+    },
+    {
+      "member": "2",
+      "varName": "Bot",
+      "info": "1",
+      "storage": "1",
+      "varName2": "BotID",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "embedSent",
+      "filter": "reaction.emoji.name === '🔒' || reaction.emoji.name === '⛔' && user.id !== ${tempVars(\"BotID\")}",
+      "max": "1",
+      "time": "",
+      "maxEmojis": "",
+      "maxUsers": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "storage2": "1",
+      "varName2": "Reaction",
+      "name": "Await Reaction Call Action"
+    },
+    {
+      "reaction": "1",
+      "varName": "Reaction",
+      "info": "3",
+      "storage": "1",
+      "varName2": "ReactionEmoji",
+      "name": "Store Reaction Info"
+    },
+    {
+      "reaction": "1",
+      "varName": "Reaction",
+      "info": "0",
+      "storage": "1",
+      "varName2": "ReactionMessage",
+      "name": "Store Reaction Info"
+    },
+    {
+      "message": "1",
+      "varName": "ReactionMessage",
+      "info": "4",
+      "storage": "1",
+      "varName2": "ReactionChannel",
+      "name": "Store Message Info"
+    },
+    {
+      "channel": "3",
+      "varName": "ReactionChannel",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ChannelID",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "ReactionEmoji",
+      "comparison": "1",
+      "value": "'⛔'",
+      "iftrue": "3",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "filename": "./Logs/Channels/${tempVars(\"ChannelID\")}-log.txt",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check if File Exists"
+    },
+    {
+      "title": "No messages have been logged",
+      "author": "",
+      "color": "BLUE",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "ReactionChannel",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "call": "13",
+      "name": "Jump to Action"
+    },
+    {
+      "title": "Ticket #${tempVars(\"TicketCount\")} Logs",
+      "author": "",
+      "color": "BLUE",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "ReactionChannel",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "channel": "5",
+      "varName": "ReactionChannel",
+      "file": "./Logs/Channels/${tempVars(\"ChannelID\")}-log.txt",
+      "message": "",
+      "name": "Send File"
+    },
+    {
+      "call": "13",
+      "name": "Jump to Action"
+    },
+    {
+      "title": "Are you sure you want to close this Ticket?",
+      "author": "",
+      "color": "RED",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed2",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed2",
+      "message": "✅ - Yes | ⛔ - No",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed2",
+      "channel": "5",
+      "varName2": "ReactionChannel",
+      "storage3": "1",
+      "varName3": "embedSent2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embedSent2",
+      "emoji": "4",
+      "varName2": "✅",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "embedSent2",
+      "emoji": "4",
+      "varName2": "⛔",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "embedSent2",
+      "filter": "reaction.emoji.name === '✅' || reaction.emoji.name === '⛔' && user.id === author.id",
+      "max": "1",
+      "time": "",
+      "maxEmojis": "",
+      "maxUsers": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "storage2": "1",
+      "varName2": "Reaction2",
+      "name": "Await Reaction Call Action"
+    },
+    {
+      "reaction": "1",
+      "varName": "Reaction2",
+      "info": "3",
+      "storage": "1",
+      "varName2": "Reaction2Emoji",
+      "name": "Store Reaction Info"
+    },
+    {
+      "storage": "1",
+      "varName": "Reaction2Emoji",
+      "comparison": "1",
+      "value": "'⛔'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "embedSent2",
+      "reason": "",
+      "name": "Delete Message"
+    },
+    {
+      "call": "13",
+      "name": "Jump to Action"
+    },
+    {
+      "title": "Closing Ticket",
+      "author": "",
+      "color": "RED",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed3",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed3",
+      "channel": "5",
+      "varName2": "ReactionChannel",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "2",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "3",
+      "varName": "ReactionChannel",
+      "reason": "",
+      "name": "Delete Channel"
+    }
+  ]
+}
