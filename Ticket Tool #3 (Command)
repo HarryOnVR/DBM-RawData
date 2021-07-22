@@ -1,0 +1,91 @@
+{
+  "name": "Log",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "qWiYx",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "Channel",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ID",
+      "name": "Store Channel Info"
+    },
+    {
+      "filename": "./Logs/Channels/${tempVars(\"ID\")}-log.txt",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check if File Exists"
+    },
+    {
+      "title": "No logs for this channel",
+      "author": "",
+      "color": "BLUE",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "This channel's message logs:",
+      "author": "",
+      "color": "BLUE",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "file": "./Logs/Channels/${tempVars(\"ID\")}-log.txt",
+      "message": "",
+      "name": "Send File"
+    }
+  ],
+  "comType": "0"
+}
