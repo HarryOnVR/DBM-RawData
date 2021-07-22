@@ -1,0 +1,78 @@
+{
+  "name": "MessageSent",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "VYWfc",
+  "actions": [
+    {
+      "message": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "Text",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "4",
+      "storage": "1",
+      "varName2": "Channel",
+      "name": "Store Message Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ChannelID",
+      "name": "Store Channel Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "Tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ID",
+      "name": "Store Member Info"
+    },
+    {
+      "type": "0",
+      "storage": "1",
+      "varName": "Year",
+      "name": "Store Time Info"
+    },
+    {
+      "type": "1",
+      "storage": "1",
+      "varName": "Month",
+      "name": "Store Time Info"
+    },
+    {
+      "type": "2",
+      "storage": "1",
+      "varName": "Day",
+      "name": "Store Time Info"
+    },
+    {
+      "input": "[${tempVars(\"Day\")}/${tempVars(\"Month\")}/${tempVars(\"Year\")}] ${tempVars(\"Tag\")} (${tempVars(\"ID\")}): ${tempVars(\"Text\")}\n",
+      "format": ".txt",
+      "filename": "${tempVars(\"ChannelID\")}-log",
+      "filepath": "./logs/Channels/",
+      "filepath2": "",
+      "filetask": "2",
+      "input2": "",
+      "togglestatus": "no",
+      "name": "File Control"
+    }
+  ],
+  "comType": "3"
+}
