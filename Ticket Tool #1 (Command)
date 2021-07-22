@@ -36,7 +36,7 @@
       "position": "",
       "storage": "1",
       "varName": "TicketChannel",
-      "categoryID": "867773137751900200",
+      "categoryID": "867800792039030784",
       "reason": "",
       "name": "Create Text Channel"
     },
@@ -117,6 +117,11 @@
       "storage": "1",
       "varName2": "BotID",
       "name": "Store Member Info"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
     },
     {
       "storage": "1",
